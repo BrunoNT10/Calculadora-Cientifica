@@ -17,6 +17,7 @@
             </tr>
             <tr>
                 <td><button class="botao_calculadora" onclick="clearScr()"> C </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> DEL </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('.')"> , </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('*0.01')"> &percnt; </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('/')"> &divide; </button></td>
@@ -26,26 +27,40 @@
                 <td><button class="botao_calculadora" onclick="sendNum('7')"> 7 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('8')"> 8 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('9')"> 9 </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> &Sqrt; </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('*')"> &times; </button></td>
+
+
             </tr>
             <tr>
                 <td><button class="botao_calculadora" onclick="sendNum('4')"> 4 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('5')"> 5 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('6')"> 6 </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> x² </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('-')"> &minus; </button></td>
+
+
             </tr>
             <tr>
                 <td><button class="botao_calculadora" onclick="sendNum('1')"> 1 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('2')"> 2 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('3')"> 3 </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> n! </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('+')"> &plus; </button></td>
+
+
             </tr>
             <tr>
                 <td><button class="botao_calculadora" onclick="sendNum('0')"> 0 </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('(')"> ( </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum(')')"> ) </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> ^ </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('/')"> log </button></td>
+            </tr>
+            <tr>
                 <td><button class="botao_calculadora" onclick="equalTo()"> &equals; </button></td>
             </tr>
+            
         </table>
     </div>    
     <p class="msg-erro" id="mensagem_erro"></p>

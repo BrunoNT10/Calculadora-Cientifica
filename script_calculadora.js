@@ -1,18 +1,16 @@
 // SCRIPT EM JAVASCRIPT PARA FAZER OS CÁLCULOS E MOSTRAR NO DISPLAY OS DADOS DA CALCULADORA
-var a = '';
-var b = '';
-var num = [];
-var ans;
-var expressao = ''
-var resultado = ''
+var expressao = '';
+var resultado = '';  
 function sendNum(digit){
-       var algarismo = digit;
-       expressao = expressao + algarismo;
+       expressao = expressao + digit;
        document.getElementById('screen').placeholder = expressao;
+
+       if(expressao[0] == '0'){
+              expressao = expressao.replace('0', '');
+       }
        return expressao;
 }
 function equalTo(){
-       console.log(expressao);
        try{
        resultado = eval(expressao);
        if (Number.isInteger(resultado)){
@@ -26,6 +24,12 @@ function equalTo(){
        expressao = resultado;
        if (Number.isInteger(expressao) == false){
            expressao = expressao.toFixed(2)
+       }
+       if (resultado == Infinity){
+              expressao="Erro!";
+              document.getElementById('screen').placeholder = expressao;
+              expressao='';
+
        }
        return expressao;
        }catch(err){
