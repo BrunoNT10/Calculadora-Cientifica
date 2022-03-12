@@ -46,3 +46,15 @@
     margin-left: 39%;
 
 }
+.botao_calculadora1 {
+    background-color: orange;
+    border:none;
+    color: white;
+    width: 350px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 22px;
+}
+.botao_calculadora1:hover{
+    background-color: orangered;
+}
