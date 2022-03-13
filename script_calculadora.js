@@ -7,11 +7,16 @@ var numero_fatorial = '';
 var calcula_fatorial = '';
 var resultado_fatorial = '';
 var expressao_exibida = '';
+var nova_expressao
 function sendNum(digit){
        
        expressao_exibida = expressao_exibida + digit;
        expressao = expressao + digit;
-       
+       if(expressao[expressao.length-1]=='!'){
+              console.log(expressao[expressao.length-1])
+              expressao=''
+       }
+
        for(i in lista_numeros){
               if(digit == lista_numeros[i]){
                      var qtd_num = 0;
@@ -27,9 +32,9 @@ function sendNum(digit){
        } else {
               numero = '';
        }
-       if (digit == '!' && numero != ''){
-              expressao = expressao.replace(numero, '');
+       if (digit == '!' && expressao[qtd_num] != '' ){
               
+            
               numero = parseInt(numero)
               var var_verifica = numero;
               for(numero; numero > 0; numero--){
@@ -51,6 +56,8 @@ function sendNum(digit){
               expressao = expressao.replace('!', '');
               expressao = expressao + resultado_fatorial;
               
+            
+             
        }
 
        if(expressao[0] == '0'){
@@ -59,7 +66,7 @@ function sendNum(digit){
        }
        console.log(expressao)
        document.getElementById('screen').placeholder = expressao_exibida;
-
+       
        return expressao;
 
 }
@@ -86,6 +93,9 @@ function equalTo(){
               expressao='';
 
        }
+      
+      
+
        return expressao;
        }catch(err){
            alert("Expressão digitada inválida!")
@@ -104,13 +114,12 @@ function equalTo(){
 
 function deletar_char(){
 
-       var nova_expressao= expressao.replace(/.$/, '');
+        nova_expressao= expressao.replace(/.$/, '');
        console.log(expressao)
        expressao=nova_expressao
        expressao_exibida=nova_expressao
        document.getElementById('screen').placeholder = expressao;
        document.getElementById('screen').placeholder = expressao_exibida;
-       
        console.log(nova_expressao)
        return expressao
 }
