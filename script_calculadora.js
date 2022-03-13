@@ -54,13 +54,13 @@ function sendNum(digit){
        }
 
        if(expressao[0] == '0'){
+              expressao_exibida = expressao_exibida.replace('0', '');
               expressao = expressao.replace('0', '');
        }
        console.log(expressao)
        document.getElementById('screen').placeholder = expressao_exibida;
 
        return expressao;
-       return resultado_fatorial;
 
 }
 function equalTo(){
@@ -102,6 +102,7 @@ function equalTo(){
 
 function clearScr(){
 	expressao = '';
+       expressao_exibida = '';
        document.getElementById('screen').placeholder = expressao;
        return expressao;    
 }
