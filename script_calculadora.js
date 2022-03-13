@@ -103,6 +103,7 @@ function equalTo(){
 function clearScr(){
 	expressao = '';
        expressao_exibida = '';
+       numero = '';
        document.getElementById('screen').placeholder = expressao;
        return expressao;    
 }
