@@ -91,7 +91,9 @@ function equalTo(){
            alert("Expressão digitada inválida!")
            document.getElementById("mensagem_erro").innerHTML = "Expressão digitada inválida!"
            expressao = '';
-           document.getElementById('screen').placeholder = expressao;
+           expressao_exibida = '';
+           document.getElementById('screen').placeholder = '';
+           
            setTimeout(function(){
               document.getElementById("mensagem_erro").innerHTML = "";
            }, 5000)
