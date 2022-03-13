@@ -102,6 +102,19 @@ function equalTo(){
        
 }
 
+function deletar_char(){
+
+       var nova_expressao= expressao.replace(/.$/, '');
+       console.log(expressao)
+       expressao=nova_expressao
+       expressao_exibida=nova_expressao
+       document.getElementById('screen').placeholder = expressao;
+       document.getElementById('screen').placeholder = expressao_exibida;
+       
+       console.log(nova_expressao)
+       return expressao
+}
+
 function clearScr(){
 	expressao = '';
        expressao_exibida = '';
