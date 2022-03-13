@@ -6,9 +6,11 @@ var numero = '';
 var numero_fatorial = '';
 var calcula_fatorial = '';
 var resultado_fatorial = '';
+var expressao_exibida = '';
 function sendNum(digit){
+       
+       expressao_exibida = expressao_exibida + digit;
        expressao = expressao + digit;
-       document.getElementById('screen').placeholder = expressao;
        
        for(i in lista_numeros){
               if(digit == lista_numeros[i]){
@@ -26,12 +28,15 @@ function sendNum(digit){
               numero = '';
        }
        if (digit == '!' && numero != ''){
+              expressao = expressao.replace(numero, '');
+              
               numero = parseInt(numero)
               var var_verifica = numero;
               for(numero; numero > 0; numero--){
                      
                      if(numero == var_verifica - 1){
                             calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + numero
+
                      }
                      else{
                             calcula_fatorial = calcula_fatorial + "*" + numero
@@ -41,14 +46,19 @@ function sendNum(digit){
               resultado_fatorial = eval(calcula_fatorial);
               numero = '';
               calcula_fatorial = '';
+              var caractere;
+              
+              expressao = expressao.replace('!', '');
+              expressao = expressao + resultado_fatorial;
               
        }
 
        if(expressao[0] == '0'){
               expressao = expressao.replace('0', '');
        }
-       
-       console.log(resultado_fatorial)
+       console.log(expressao)
+       document.getElementById('screen').placeholder = expressao_exibida;
+
        return expressao;
        return resultado_fatorial;
 
@@ -65,6 +75,8 @@ function equalTo(){
    
        }
        expressao = resultado;
+       expressao_exibida = resultado;
+       console.log(expressao)
        if (Number.isInteger(expressao) == false){
            expressao = expressao.toFixed(2)
        }
