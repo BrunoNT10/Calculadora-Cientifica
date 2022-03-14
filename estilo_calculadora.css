@@ -1,6 +1,6 @@
 /* CÓDIGO CSS PARA ESTILIZAR A PÁGINA HTML DA CALCULADORA */
 .calculadora {
-    margin-left: 35%;
+    margin: auto;
     padding: 10px;
     border: solid 2px black;
     border-radius: 10px;
