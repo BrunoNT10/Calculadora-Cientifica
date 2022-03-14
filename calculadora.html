@@ -19,7 +19,7 @@
                 <td><button class="botao_calculadora" onclick="clearScr()"> C </button></td>
                 <td><button class="botao_calculadora" onclick="deletar_char()"> DEL </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('.')"> , </button></td>
-                <td><button class="botao_calculadora" onclick="sendNum('*0.01')"> &percnt; </button></td>
+                <td><button class="botao_calculadora" onclick="sendNum('*0.01*')"> &percnt; </button></td>
                 <td><button class="botao_calculadora" onclick="sendNum('/')"> &divide; </button></td>
 
             </tr>
@@ -56,7 +56,9 @@
                 <td><button class="botao_calculadora" onclick="sendNum('*10**')"> EXP </button></td>
             </tr>
             <tr>
-                <td colspan='5'><button class="botao_calculadora1" onclick="equalTo()"> &equals; </button></td>
+                <td colspan='2'><button class="botao_calculadora2" onclick="sendNum('**(-1)')"> x<sup>-1</sup> </button></td>
+                <td colspan='3'><button class="botao_calculadora1" onclick="equalTo()"> &equals; </button></td>
+                
             </tr>
             
         </table>

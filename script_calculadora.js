@@ -33,21 +33,48 @@ function sendNum(digit){
        else {
               numero = '';
        }
-       if (digit == '!'){
-              if (numero != ''){
+       
+       if(expressao_exibida=='0!'){
+              expressao='1'
+              expressao_exibida='1'
+              console.log('SIUUU')
+              console.log(expressao_exibida)
+              console.log(expressao)
+       }
+
+       else if(expressao_exibida=='1!'){
+              expressao='1'
+              expressao_exibida='1'
+              console.log('SIUUU')
+              console.log(expressao_exibida)
+              console.log(expressao)
+       }
+
+       console.log(`ERRO3 ${expressao}`)
+
+       if (digit == '!' && expressao_exibida!='1'){
+             
+
+              if (numero != ''&& numero!='0'){
                      numero = parseInt(numero)
                      var var_verifica = numero;
-                     for(numero; numero > 0; numero--){
+                    
+                    
+                            for(numero; numero > 0; numero--){
                      
-                            if(numero == var_verifica - 1){
-                                   calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + numero
-
+                                   if(numero == var_verifica - 1){
+                                          calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + numero
+       
+                                   }
+                                   else{
+                                          calcula_fatorial = calcula_fatorial + "*" + numero
+                                   }
+       
                             }
-                            else{
-                                   calcula_fatorial = calcula_fatorial + "*" + numero
-                            }
+                     
 
-                     }
+                     
+
               }
               else if (resultado != 0){
                      var var_verifica = resultado;
@@ -72,10 +99,15 @@ function sendNum(digit){
               expressao = expressao + resultado_fatorial;
               
        }
+       console.log(`ERRO2 ${expressao}`)
 
        if(digit=='**2'){
             expressao_exibida = expressao_exibida.replace('**2', '^2');
        }
+
+       if(digit=='**(-1)'){
+              expressao_exibida = expressao_exibida.replace('**(-1)', '^(-1)');
+         }
 
        if(digit=='**'){
               expressao_exibida = expressao_exibida.replace('**', '^');
@@ -95,18 +127,22 @@ function sendNum(digit){
        expressao_exibida=nova_expressao
       // console.log(`teste ${expressao_exibida}`)
        expressao_exibida = Math.sqrt(Number(expressao_exibida))
+       expressao = Math.sqrt(Number(expressao))
        expressao_exibida = `${expressao_exibida}`
 
        
        
        }
+       console.log(`ERRO1 ${expressao}`)
 
 
-       if(expressao[0] == '0'){
+       if(expressao[0] == '0' && expressao.length>1){
               expressao_exibida = expressao_exibida.replace('0', '');
               expressao = expressao.replace('0', '');
+              console.log(expressao_exibida)
        }
-       console.log(expressao)
+
+       console.log(`ERRO0 ${expressao}`)
        document.getElementById('screen').placeholder = expressao_exibida;
        
        return expressao;

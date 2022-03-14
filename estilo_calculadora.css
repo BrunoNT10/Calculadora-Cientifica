@@ -50,11 +50,24 @@
     background-color: orange;
     border:none;
     color: white;
-    width: 350px;
+    width: 200px;
     height: 60px;
     border-radius: 20px;
     font-size: 22px;
 }
 .botao_calculadora1:hover{
+    background-color: orangered;
+}
+
+.botao_calculadora2 {
+    background-color: orange;
+    border:none;
+    color: white;
+    width: 130px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 22px;
+}
+.botao_calculadora2:hover{
     background-color: orangered;
 }
