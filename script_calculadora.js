@@ -73,6 +73,35 @@ function sendNum(digit){
               
        }
 
+       if(digit=='**2'){
+            expressao_exibida = expressao_exibida.replace('**2', '^2');
+       }
+
+       if(digit=='**'){
+              expressao_exibida = expressao_exibida.replace('**', '^');
+
+       }
+
+       if(digit=='*10**'){
+              expressao_exibida = expressao_exibida.replace('*10**', 'E');
+       }
+
+       if(digit=='√'){
+             
+           
+           nova_expressao= expressao.replace(/.$/, '');
+       console.log(expressao)
+       expressao=nova_expressao
+       expressao_exibida=nova_expressao
+      // console.log(`teste ${expressao_exibida}`)
+       expressao_exibida = Math.sqrt(Number(expressao_exibida))
+       expressao_exibida = `${expressao_exibida}`
+
+       
+       
+       }
+
+
        if(expressao[0] == '0'){
               expressao_exibida = expressao_exibida.replace('0', '');
               expressao = expressao.replace('0', '');
