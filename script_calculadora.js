@@ -29,35 +29,48 @@ function sendNum(digit){
               qtd_num = 0;
        } else if(digit == '!'){
               numero = numero;
-       } else {
+       }
+       else {
               numero = '';
        }
-       if (digit == '!' && expressao[qtd_num] != '' ){
-              
-            
-              numero = parseInt(numero)
-              var var_verifica = numero;
-              for(numero; numero > 0; numero--){
+       if (digit == '!'){
+              if (numero != ''){
+                     numero = parseInt(numero)
+                     var var_verifica = numero;
+                     for(numero; numero > 0; numero--){
                      
-                     if(numero == var_verifica - 1){
-                            calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + numero
+                            if(numero == var_verifica - 1){
+                                   calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + numero
+
+                            }
+                            else{
+                                   calcula_fatorial = calcula_fatorial + "*" + numero
+                            }
 
                      }
-                     else{
-                            calcula_fatorial = calcula_fatorial + "*" + numero
-                     }
-
               }
+              else if (resultado != 0){
+                     var var_verifica = resultado;
+                     for(resultado; resultado > 0; resultado--){
+                     
+                            if(resultado == var_verifica - 1){
+                                   calcula_fatorial = calcula_fatorial.replace(calcula_fatorial[0], "") + "*" + resultado
+
+                            }
+                            else{
+                                   calcula_fatorial = calcula_fatorial + "*" + resultado
+                            }
+
+                     }
+              }
+             
               resultado_fatorial = eval(calcula_fatorial);
               numero = '';
               calcula_fatorial = '';
-              var caractere;
               
               expressao = expressao.replace('!', '');
               expressao = expressao + resultado_fatorial;
               
-            
-             
        }
 
        if(expressao[0] == '0'){
@@ -71,6 +84,7 @@ function sendNum(digit){
 
 }
 function equalTo(){
+       numero = ''
        try{
        resultado = eval(expressao);
        if (Number.isInteger(resultado)){
@@ -93,8 +107,6 @@ function equalTo(){
               expressao='';
 
        }
-      
-      
 
        return expressao;
        }catch(err){
@@ -114,7 +126,7 @@ function equalTo(){
 
 function deletar_char(){
 
-        nova_expressao= expressao.replace(/.$/, '');
+       nova_expressao= expressao.replace(/.$/, '');
        console.log(expressao)
        expressao=nova_expressao
        expressao_exibida=nova_expressao
@@ -130,7 +142,4 @@ function clearScr(){
        numero = '';
        document.getElementById('screen').placeholder = expressao;
        return expressao;    
-}
-function fatorial(){
-
 }
