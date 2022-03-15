@@ -7,7 +7,8 @@ var numero_fatorial = '';
 var calcula_fatorial = '';
 var resultado_fatorial = '';
 var expressao_exibida = '';
-var nova_expressao
+var nova_expressao;
+var nova_expressao_exibida;
 function sendNum(digit){
        
        expressao_exibida = expressao_exibida + digit;
@@ -37,20 +38,14 @@ function sendNum(digit){
        if(expressao_exibida=='0!'){
               expressao='1'
               expressao_exibida='1'
-              console.log('SIUUU')
-              console.log(expressao_exibida)
-              console.log(expressao)
+              
        }
 
        else if(expressao_exibida=='1!'){
               expressao='1'
               expressao_exibida='1'
-              console.log('SIUUU')
-              console.log(expressao_exibida)
-              console.log(expressao)
+              
        }
-
-       console.log(`ERRO3 ${expressao}`)
 
        if (digit == '!' && expressao_exibida!='1'){
              
@@ -72,9 +67,6 @@ function sendNum(digit){
        
                             }
                      
-
-                     
-
               }
               else if (resultado != 0){
                      var var_verifica = resultado;
@@ -99,7 +91,6 @@ function sendNum(digit){
               expressao = expressao + resultado_fatorial;
               
        }
-       console.log(`ERRO2 ${expressao}`)
 
        if(digit=='**2'){
             expressao_exibida = expressao_exibida.replace('**2', '^2');
@@ -107,7 +98,7 @@ function sendNum(digit){
 
        if(digit=='**(-1)'){
               expressao_exibida = expressao_exibida.replace('**(-1)', '^(-1)');
-         }
+       }
 
        if(digit=='**'){
               expressao_exibida = expressao_exibida.replace('**', '^');
@@ -118,23 +109,19 @@ function sendNum(digit){
               expressao_exibida = expressao_exibida.replace('*10**', 'E');
        }
 
-       if(digit=='√'){
-             
-           
-           nova_expressao= expressao.replace(/.$/, '');
-       console.log(expressao)
-       expressao=nova_expressao
-       expressao_exibida=nova_expressao
-      // console.log(`teste ${expressao_exibida}`)
-       expressao_exibida = Math.sqrt(Number(expressao_exibida))
-       expressao = Math.sqrt(Number(expressao))
-       expressao_exibida = `${expressao_exibida}`
+       if(digit=='*0.01*'){
+              expressao_exibida = expressao_exibida.replace('*0.01*', '%');
+       }
 
-       
+       if(digit=='√'){
+              nova_expressao= expressao.replace(/.$/, '');
+              expressao=nova_expressao
+              expressao_exibida=nova_expressao
+              expressao_exibida = Math.sqrt(Number(expressao_exibida))
+              expressao = Math.sqrt(Number(expressao))
+              expressao_exibida = `${expressao_exibida}`
        
        }
-       console.log(`ERRO1 ${expressao}`)
-
 
        if(expressao[0] == '0' && expressao.length>1){
               expressao_exibida = expressao_exibida.replace('0', '');
@@ -142,7 +129,6 @@ function sendNum(digit){
               console.log(expressao_exibida)
        }
 
-       console.log(`ERRO0 ${expressao}`)
        document.getElementById('screen').placeholder = expressao_exibida;
        
        return expressao;
@@ -190,12 +176,21 @@ function equalTo(){
 }
 
 function deletar_char(){
+       if(expressao_exibida[expressao_exibida.length - 1] == '%'){
+              console.log("funcionou")
+              nova_expressao= expressao.replace('*0.01*', '');
+              nova_expressao_exibida = expressao_exibida.replace(/.$/, '');
 
-       nova_expressao= expressao.replace(/.$/, '');
+       }
+       else{
+              nova_expressao= expressao.replace(/.$/, '');
+              nova_expressao_exibida = expressao_exibida.replace(/.$/, '');
+
+       }
        console.log(expressao)
        expressao=nova_expressao
-       expressao_exibida=nova_expressao
-       document.getElementById('screen').placeholder = expressao;
+       expressao_exibida=nova_expressao_exibida
+       console.log(expressao_exibida)
        document.getElementById('screen').placeholder = expressao_exibida;
        console.log(nova_expressao)
        return expressao

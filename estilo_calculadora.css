@@ -35,8 +35,9 @@
     color: black;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: bold;
-    font-size: 50px;
-    margin-left: 39%;
+    font-size: 20px;
+    margin-left: 1%;
+    text-align:center;
 }
 .msg-erro{
     color: red;
